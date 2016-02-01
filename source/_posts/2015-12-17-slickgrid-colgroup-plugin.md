@@ -1,7 +1,9 @@
 ---
 title: slickgrid-colgroup-plugin 作った
 date: 2015-12-17 22:11:00
-tags: javascript, slickgrid
+tags:
+- javascript
+- slickgrid
 ---
 
 [SlickGrid](https://github.com/mleibman/SlickGrid) のヘッダをグループ化するプラグイン [slickgrid-colgroup-plugin](https://github.com/keik/slickgrid-colgroup-plugin) を作ったので、ギョームシステムの開発とかにどうぞ。MIT。
