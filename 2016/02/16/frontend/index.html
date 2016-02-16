@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>blog.keik.info</title>
+  <title>Grunt や gulp のかわりに Make も使ってみよう | blog.keik.info</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="blog.keik.info">
-<meta property="og:url" content="http://blog.keik.info/index.html">
+  <meta name="description" content="フロントエンド開発のタスクランナーとして Grunt や gulp、npm run-script なんかを使ってきたが、今は Make を使っている。フロントエンド分野ではあまり馴染みのないツールかもしれないが、必要十分な機能性と高い表現力のバランスの良さを実感し、一巡辿ってゴールにたどり着いた感がある。もっと流行ってほしい。
+Make は Makefile に定義したルールにしたがってビルドプロ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grunt や gulp のかわりに Make も使ってみよう">
+<meta property="og:url" content="http://blog.keik.info/2016/02/16/frontend/index.html">
 <meta property="og:site_name" content="blog.keik.info">
-<meta property="og:description">
+<meta property="og:description" content="フロントエンド開発のタスクランナーとして Grunt や gulp、npm run-script なんかを使ってきたが、今は Make を使っている。フロントエンド分野ではあまり馴染みのないツールかもしれないが、必要十分な機能性と高い表現力のバランスの良さを実感し、一巡辿ってゴールにたどり着いた感がある。もっと流行ってほしい。
+Make は Makefile に定義したルールにしたがってビルドプロ">
+<meta property="og:updated_time" content="2016-02-16T12:14:05.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog.keik.info">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Grunt や gulp のかわりに Make も使ってみよう">
+<meta name="twitter:description" content="フロントエンド開発のタスクランナーとして Grunt や gulp、npm run-script なんかを使ってきたが、今は Make を使っている。フロントエンド分野ではあまり馴染みのないツールかもしれないが、必要十分な機能性と高い表現力のバランスの良さを実感し、一巡辿ってゴールにたどり着いた感がある。もっと流行ってほしい。
+Make は Makefile に定義したルールにしたがってビルドプロ">
   
     <link rel="alternate" href="/atom.xml" title="blog.keik.info" type="application/atom+xml">
   
@@ -60,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-frontend" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-frontend" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/16/frontend/" class="article-date">
   <time datetime="2016-02-16T12:00:00.000Z" itemprop="datePublished">2016-02-16</time>
@@ -75,8 +77,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/16/frontend/">Grunt や gulp のかわりに Make も使ってみよう</a>
+    <h1 class="article-title" itemprop="name">
+      Grunt や gulp のかわりに Make も使ってみよう
     </h1>
   
 
@@ -146,55 +148,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-slickgrid-colgroup-plugin" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/12/17/slickgrid-colgroup-plugin/" class="article-date">
-  <time datetime="2015-12-17T13:11:00.000Z" itemprop="datePublished">2015-12-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/17/slickgrid-colgroup-plugin/">slickgrid-colgroup-plugin 作った</a>
-    </h1>
+    <a href="/2015/12/17/slickgrid-colgroup-plugin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">slickgrid-colgroup-plugin 作った</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://github.com/mleibman/SlickGrid" target="_blank" rel="external">SlickGrid</a> のヘッダをグループ化するプラグイン <a href="https://github.com/keik/slickgrid-colgroup-plugin" target="_blank" rel="external">slickgrid-colgroup-plugin</a> を作ったので、ギョームシステムの開発とかにどうぞ。MIT。</p>
-<p><a href="http://keik.github.io/slickgrid-colgroup-plugin/examples/" target="_blank" rel="external">デモページ</a> にいくつかのサンプルを置いてます。</p>
-<p>SlickGrid 自体についても簡単に紹介すると、大量のデータをグリッドで表示できることを特徴としたフレームワークで、その仕組としてはスクロールされるたびに表示領域の DOM 要素だけを動的に作り直すことによって大量データを少ない DOM 要素数で表現している。</p>
-<p>プラグイン v1.0.4 における使い方は、SlickGrid オブジェクトにプラグインを登録して</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid.registerPlugin(<span class="keyword">new</span> Slick.Plugins.ColGroup());</span><br></pre></td></tr></table></figure>
-<p>カラム定義で <code>children</code> プロパティを用いてグループ構造を持ったカラム定義を与えるだけ。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> columns = [</span><br><span class="line">  &#123;id: <span class="string">'col1'</span>, name: <span class="string">'col 1'</span>, children: [</span><br><span class="line">    &#123;id: <span class="string">'col1-1'</span>, name: <span class="string">'col 1-1'</span>, field: <span class="string">'col1-1'</span>&#125;,</span><br><span class="line">    &#123;id: <span class="string">'col1-2'</span>, name: <span class="string">'col 1-2'</span>, field: <span class="string">'col1-2'</span>&#125;</span><br><span class="line">  ]&#125;,</span><br><span class="line">  &#123;id: <span class="string">'col2'</span>, name: <span class="string">'col 2'</span>, children: [</span><br><span class="line">    &#123;id: <span class="string">'col2-1'</span>, name: <span class="string">'col 2-1'</span>, field: <span class="string">'col2-1'</span>&#125;,</span><br><span class="line">    &#123;id: <span class="string">'col2-2'</span>, name: <span class="string">'col 2-2'</span>, children: [</span><br><span class="line">      &#123;id: <span class="string">'col2-2-1'</span>, name: <span class="string">'col 2-2-1'</span>, field: <span class="string">'col2-2-1'</span>&#125;,</span><br><span class="line">      &#123;id: <span class="string">'col2-2-2'</span>, name: <span class="string">'col 2-2-2'</span>, field: <span class="string">'col2-2-2'</span>&#125;</span><br><span class="line">    ]&#125;</span><br><span class="line">  ]&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/" data-id="cikpdi15y00004ygzhf41e7kt" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/slickgrid/">slickgrid</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
