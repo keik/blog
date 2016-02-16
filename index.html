@@ -123,7 +123,7 @@
 <p>はじめのほうに書いた次の Makefile は、</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dist/bundle.js:</span><br><span class="line">	@node_modules/.bin/browserify src/main.js | \</span><br><span class="line">	node_modules/.bin/uglifyjs -o dist/bundle.js</span><br></pre></td></tr></table></figure>
 <p>次の様に書き換えることができる。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">SRC</span>       = src</span><br><span class="line"><span class="constant">DIST</span>      = dist</span><br><span class="line"><span class="constant">MAIN_JS</span>   = <span class="variable">$(SRC)</span>/main.js</span><br><span class="line"><span class="constant">BUNDLE_JS</span> = <span class="variable">$(DIST)</span>/bundle.js</span><br><span class="line"></span><br><span class="line"><span class="title">BUNDLE_JS:</span></span><br><span class="line">	@node_modules/.bin/browserify <span class="variable">$(MAIN_JS)</span> | \</span><br><span class="line">	node_modules/.bin/uglifyjs -o $@</span><br></pre></td></tr></table></figure>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">SRC</span>       = src</span><br><span class="line"><span class="constant">DIST</span>      = dist</span><br><span class="line"><span class="constant">MAIN_JS</span>   = <span class="variable">$(SRC)</span>/main.js</span><br><span class="line"><span class="constant">BUNDLE_JS</span> = <span class="variable">$(DIST)</span>/bundle.js</span><br><span class="line"></span><br><span class="line">$(BUNDLE_JS):</span><br><span class="line">	@node_modules/.bin/browserify <span class="variable">$(MAIN_JS)</span> | \</span><br><span class="line">	node_modules/.bin/uglifyjs -o $@</span><br></pre></td></tr></table></figure>
 <p>変数定義 <code>VAR=foo</code> と参照 <code>$(VAR)</code>、更にターゲット名を表すマクロ <code>$@</code> を導入した。</p>
 <h2 id="28_u756A_u5916_29_STEP_5-_Windows__u5BFE_u5FDC"><a href="#28_u756A_u5916_29_STEP_5-_Windows__u5BFE_u5FDC" class="headerlink" title="(番外) STEP 5. Windows 対応"></a>(番外) STEP 5. Windows 対応</h2><p>Windows よくわからないけど、MinGW とか使ってほしい。コマンドプロンプトでは諦めてほしい。こんな感じで <code>/</code> を <code>\</code> に置換する関数を使うといけたりもする。<strong>諦めてほしい</strong>。</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ifdef SystemRoot</span><br><span class="line">	fixPath = <span class="variable">$(subst /,\,$1)</span></span><br><span class="line">else</span><br><span class="line">	fixPath = $1</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">$(call fixPath,dist/bundle.js):</span><br><span class="line">	@<span class="variable">$(call fixPath,node_modules/.bin/browserify src/main.js -o dist/bundle.js)</span></span><br></pre></td></tr></table></figure>
@@ -140,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2016/02/16/frontend/" data-id="cikpdnv5800056fgzfqcm8d5q" class="article-share-link">Share</a>
+      <a data-url="http://blog.keik.info/2016/02/16/frontend/" data-id="cikpdr7480005vvgzm5ky0bow" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/make/">make</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/task-runner/">task-runner</a></li></ul>
@@ -185,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/" data-id="cikpdnv4c00006fgzje2gdapl" class="article-share-link">Share</a>
+      <a data-url="http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/" data-id="cikpdr73b0000vvgzj8awj0x8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/slickgrid/">slickgrid</a></li></ul>
