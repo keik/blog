@@ -62,6 +62,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-release-undebuggify" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/18/release-undebuggify/" class="article-date">
+  <time datetime="2016-02-18T14:18:57.000Z" itemprop="datePublished">2016-02-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/18/release-undebuggify/">undebuggify リリースした</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://github.com/visionmedia/debug" target="_blank" rel="external">debug</a> を使用しているコードを AST を辿って削除する Browserify Transform モジュール <a href="https://github.com/keik/undebuggify" target="_blank" rel="external">undebuggify</a> を作ったのでご活用ください。使用例は README.md に書いてあります。</p>
+<h2 id="debug__u3063_u3066_u4F55"><a href="#debug__u3063_u3066_u4F55" class="headerlink" title="debug って何"></a>debug って何</h2><p>ロガー。個人的に JavaScript でトレースログを埋め込む際は <code>console.log</code> ではなく debug を常用している。なぜなら</p>
+<ul>
+<li>ログを埋め込んだモジュールごとに異なる色で出力される</li>
+<li>前回ログ出力からの経過時間などが出力される</li>
+<li>環境変数をいじることで出力したいログを絞り込むことができる</li>
+</ul>
+<p>など便利な機能があるから。</p>
+<h2 id="u306A_u305C_debug__u3092_u524A_u9664_u3059_u308B_u5FC5_u8981_u304C_u3042_u308B_u306E_u304B"><a href="#u306A_u305C_debug__u3092_u524A_u9664_u3059_u308B_u5FC5_u8981_u304C_u3042_u308B_u306E_u304B" class="headerlink" title="なぜ debug を削除する必要があるのか"></a>なぜ debug を削除する必要があるのか</h2><p>ウェブブラウザ向けスクリプトをリリースする際、ログ出力コードは削除しておきたい。第一にダサいし、また debug の 4KB のコードをバンドルしたくないから。</p>
+<h2 id="debug__u3058_u3083_u306A_u304F_u3066_console-log__u4F7F_u3063_u3066_u3044_u308B_u3093_u3060_u3051_u3069"><a href="#debug__u3058_u3083_u306A_u304F_u3066_console-log__u4F7F_u3063_u3066_u3044_u308B_u3093_u3060_u3051_u3069" class="headerlink" title="debug じゃなくて console.log 使っているんだけど"></a>debug じゃなくて console.log 使っているんだけど</h2><p><a href="https://github.com/alanshaw/stripify" target="_blank" rel="external">stripify</a> をご活用ください。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.keik.info/2016/02/18/release-undebuggify/" data-id="ciksctal7000dp8gziecoqc2z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ast/">ast</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform/">transform</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-frontend" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/16/frontend/" class="article-date">
@@ -140,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2016/02/16/frontend/" data-id="cikpdr7480005vvgzm5ky0bow" class="article-share-link">Share</a>
+      <a data-url="http://blog.keik.info/2016/02/16/frontend/" data-id="cikscsr1m0006p8gzln7wfepr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/make/">make</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/task-runner/">task-runner</a></li></ul>
@@ -185,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/" data-id="cikpdr73b0000vvgzj8awj0x8" class="article-share-link">Share</a>
+      <a data-url="http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/" data-id="cikscsqzy0000p8gz71o02src" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/slickgrid/">slickgrid</a></li></ul>
@@ -209,7 +257,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/make/">make</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/slickgrid/">slickgrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/task-runner/">task-runner</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ast/">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browserify/">browserify</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/make/">make</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/slickgrid/">slickgrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/task-runner/">task-runner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transform/">transform</a></li></ul>
     </div>
   </div>
 
@@ -219,7 +267,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/make/" style="font-size: 10px;">make</a> <a href="/tags/slickgrid/" style="font-size: 10px;">slickgrid</a> <a href="/tags/task-runner/" style="font-size: 10px;">task-runner</a>
+      <a href="/tags/ast/" style="font-size: 10px;">ast</a> <a href="/tags/browserify/" style="font-size: 10px;">browserify</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/make/" style="font-size: 10px;">make</a> <a href="/tags/slickgrid/" style="font-size: 10px;">slickgrid</a> <a href="/tags/task-runner/" style="font-size: 10px;">task-runner</a> <a href="/tags/transform/" style="font-size: 10px;">transform</a>
     </div>
   </div>
 
@@ -239,6 +287,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/02/18/release-undebuggify/">undebuggify リリースした</a>
+          </li>
         
           <li>
             <a href="/2016/02/16/frontend/">Grunt や gulp のかわりに Make も使ってみよう</a>

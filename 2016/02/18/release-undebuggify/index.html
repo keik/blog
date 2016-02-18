@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | blog.keik.info</title>
+  <title>undebuggify リリースした | blog.keik.info</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="blog.keik.info">
-<meta property="og:url" content="http://blog.keik.info/archives/index.html">
+  <meta name="description" content="debug を使用しているコードを AST を辿って削除する Browserify Transform モジュール undebuggify を作ったのでご活用ください。使用例は README.md に書いてあります。
+debug って何ロガー。個人的に JavaScript でトレースログを埋め込む際は console.log ではなく debug を常用している。なぜなら
+
+ログを埋め込んだモジ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="undebuggify リリースした">
+<meta property="og:url" content="http://blog.keik.info/2016/02/18/release-undebuggify/index.html">
 <meta property="og:site_name" content="blog.keik.info">
-<meta property="og:description">
+<meta property="og:description" content="debug を使用しているコードを AST を辿って削除する Browserify Transform モジュール undebuggify を作ったのでご活用ください。使用例は README.md に書いてあります。
+debug って何ロガー。個人的に JavaScript でトレースログを埋め込む際は console.log ではなく debug を常用している。なぜなら
+
+ログを埋め込んだモジ">
+<meta property="og:updated_time" content="2016-02-18T14:47:39.952Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog.keik.info">
-<meta name="twitter:description">
+<meta name="twitter:title" content="undebuggify リリースした">
+<meta name="twitter:description" content="debug を使用しているコードを AST を辿って削除する Browserify Transform モジュール undebuggify を作ったのでご活用ください。使用例は README.md に書いてあります。
+debug って何ロガー。個人的に JavaScript でトレースログを埋め込む際は console.log ではなく debug を常用している。なぜなら
+
+ログを埋め込んだモジ">
   
     <link rel="alternate" href="/atom.xml" title="blog.keik.info" type="application/atom+xml">
   
@@ -60,87 +70,63 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/18/release-undebuggify/" class="archive-article-date">
-  <time datetime="2016-02-18T14:18:57.000Z" itemprop="datePublished">2月 18</time>
+        <section id="main"><article id="post-release-undebuggify" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/18/release-undebuggify/" class="article-date">
+  <time datetime="2016-02-18T14:18:57.000Z" itemprop="datePublished">2016-02-18</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/18/release-undebuggify/">undebuggify リリースした</a>
+    <h1 class="article-title" itemprop="name">
+      undebuggify リリースした
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/02/16/frontend/" class="archive-article-date">
-  <time datetime="2016-02-16T12:00:00.000Z" itemprop="datePublished">2月 16</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/02/16/frontend/">Grunt や gulp のかわりに Make も使ってみよう</a>
-    </h1>
-  
+        <p><a href="https://github.com/visionmedia/debug" target="_blank" rel="external">debug</a> を使用しているコードを AST を辿って削除する Browserify Transform モジュール <a href="https://github.com/keik/undebuggify" target="_blank" rel="external">undebuggify</a> を作ったのでご活用ください。使用例は README.md に書いてあります。</p>
+<h2 id="debug__u3063_u3066_u4F55"><a href="#debug__u3063_u3066_u4F55" class="headerlink" title="debug って何"></a>debug って何</h2><p>ロガー。個人的に JavaScript でトレースログを埋め込む際は <code>console.log</code> ではなく debug を常用している。なぜなら</p>
+<ul>
+<li>ログを埋め込んだモジュールごとに異なる色で出力される</li>
+<li>前回ログ出力からの経過時間などが出力される</li>
+<li>環境変数をいじることで出力したいログを絞り込むことができる</li>
+</ul>
+<p>など便利な機能があるから。</p>
+<h2 id="u306A_u305C_debug__u3092_u524A_u9664_u3059_u308B_u5FC5_u8981_u304C_u3042_u308B_u306E_u304B"><a href="#u306A_u305C_debug__u3092_u524A_u9664_u3059_u308B_u5FC5_u8981_u304C_u3042_u308B_u306E_u304B" class="headerlink" title="なぜ debug を削除する必要があるのか"></a>なぜ debug を削除する必要があるのか</h2><p>ウェブブラウザ向けスクリプトをリリースする際、ログ出力コードは削除しておきたい。第一にダサいし、また debug の 4KB のコードをバンドルしたくないから。</p>
+<h2 id="debug__u3058_u3083_u306A_u304F_u3066_console-log__u4F7F_u3063_u3066_u3044_u308B_u3093_u3060_u3051_u3069"><a href="#debug__u3058_u3083_u306A_u304F_u3066_console-log__u4F7F_u3063_u3066_u3044_u308B_u3093_u3060_u3051_u3069" class="headerlink" title="debug じゃなくて console.log 使っているんだけど"></a>debug じゃなくて console.log 使っているんだけど</h2><p><a href="https://github.com/alanshaw/stripify" target="_blank" rel="external">stripify</a> をご活用ください。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.keik.info/2016/02/18/release-undebuggify/" data-id="ciksctal7000dp8gziecoqc2z" class="article-share-link">Share</a>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/12/17/slickgrid-colgroup-plugin/" class="archive-article-date">
-  <time datetime="2015-12-17T13:11:00.000Z" itemprop="datePublished">12月 17</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/12/17/slickgrid-colgroup-plugin/">slickgrid-colgroup-plugin 作った</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ast/">ast</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform/">transform</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/16/frontend/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Grunt や gulp のかわりに Make も使ってみよう</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 </section>
         
