@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.keik.info/"/>
-  <updated>2016-02-22T15:28:05.707Z</updated>
+  <updated>2016-02-22T22:41:25.316Z</updated>
   <id>http://blog.keik.info/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>オートコンプリートライブラリを作った話と UI 実装のテクニックについて</title>
     <link href="http://blog.keik.info/2016/02/22/release-ac-box/"/>
     <id>http://blog.keik.info/2016/02/22/release-ac-box/</id>
-    <published>2016-02-22T01:49:25.000Z</published>
-    <updated>2016-02-22T15:28:05.707Z</updated>
+    <published>2016-02-22T13:49:25.000Z</published>
+    <updated>2016-02-22T22:41:25.316Z</updated>
     
     <content type="html">&lt;p&gt;シンプルなオートコンプリートコンボボックス UI ライブラリ &lt;a href=&quot;https://github.com/keik/ac-box&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ac-box&lt;/a&gt; を作った。&lt;a href=&quot;http://keik.info/ac-box/examples/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;デモはこちら&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&quot;u7279_u5FB4&quot;&gt;&lt;a href=&quot;#u7279_u5FB4&quot; class=&quot;headerlink&quot; title=&quot;特徴&quot;&gt;&lt;/a&gt;特徴&lt;/h2&gt;&lt;ul&gt;
