@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>blog.keik.info</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.keik.info/"/>
+  <updated>2016-02-18T14:47:39.952Z</updated>
+  <id>http://blog.keik.info/</id>
+  
+  <author>
+    <name>keik</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>undebuggify リリースした</title>
+    <link href="http://blog.keik.info/2016/02/18/release-undebuggify/"/>
+    <id>http://blog.keik.info/2016/02/18/release-undebuggify/</id>
+    <published>2016-02-18T14:18:57.000Z</published>
+    <updated>2016-02-18T14:47:39.952Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/visionmedia/debug&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;debug&lt;/a&gt; を使用しているコードを AST を辿って削除する Browserify Transform モジュール &lt;a href=&quot;https://github.com/keik/undebuggify&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;undebuggify&lt;/a&gt; を作ったのでご活用ください。使用例は README.md に書いてあります。&lt;/p&gt;
+&lt;h2 id=&quot;debug__u3063_u3066_u4F55&quot;&gt;&lt;a href=&quot;#debug__u3063_u3066_u4F55&quot; class=&quot;headerlink&quot; title=&quot;debug って何&quot;&gt;&lt;/a&gt;debug って何&lt;/h2&gt;&lt;p&gt;ロガー。個人的に JavaScript でトレースログを埋め込む際は &lt;code&gt;console.log&lt;/code&gt; ではなく debug を常用している。なぜなら&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ログを埋め込んだモジュールごとに異なる色で出力される&lt;/li&gt;
+&lt;li&gt;前回ログ出力からの経過時間などが出力される&lt;/li&gt;
+&lt;li&gt;環境変数をいじることで出力したいログを絞り込むことができる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;など便利な機能があるから。&lt;/p&gt;
+&lt;h2 id=&quot;u306A_u305C_debug__u3092_u524A_u9664_u3059_u308B_u5FC5_u8981_u304C_u3042_u308B_u306E_u304B&quot;&gt;&lt;a href=&quot;#u306A_u305C_debug__u3092_u524A_u9664_u3059_u308B_u5FC5_u8981_u304C_u3042_u308B_u306E_u304B&quot; class=&quot;headerlink&quot; title=&quot;なぜ debug を削除する必要があるのか&quot;&gt;&lt;/a&gt;なぜ debug を削除する必要があるのか&lt;/h2&gt;&lt;p&gt;ウェブブラウザ向けスクリプトをリリースする際、ログ出力コードは削除しておきたい。第一にダサいし、また debug の 4KB のコードをバンドルしたくないから。&lt;/p&gt;
+&lt;h2 id=&quot;debug__u3058_u3083_u306A_u304F_u3066_console-log__u4F7F_u3063_u3066_u3044_u308B_u3093_u3060_u3051_u3069&quot;&gt;&lt;a href=&quot;#debug__u3058_u3083_u306A_u304F_u3066_console-log__u4F7F_u3063_u3066_u3044_u308B_u3093_u3060_u3051_u3069&quot; class=&quot;headerlink&quot; title=&quot;debug じゃなくて console.log 使っているんだけど&quot;&gt;&lt;/a&gt;debug じゃなくて console.log 使っているんだけど&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/alanshaw/stripify&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stripify&lt;/a&gt; をご活用ください。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/visionmedia/debug&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;debug&lt;/a&gt; を使用しているコードを AST を辿って削除する Browserify Transform モジュ
+    
+    </summary>
+    
+    
+      <category term="ast" scheme="http://blog.keik.info/tags/ast/"/>
+    
+      <category term="browserify" scheme="http://blog.keik.info/tags/browserify/"/>
+    
+      <category term="javascript" scheme="http://blog.keik.info/tags/javascript/"/>
+    
+      <category term="transform" scheme="http://blog.keik.info/tags/transform/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Grunt や gulp のかわりに Make も使ってみよう</title>
+    <link href="http://blog.keik.info/2016/02/16/frontend/"/>
+    <id>http://blog.keik.info/2016/02/16/frontend/</id>
+    <published>2016-02-16T12:00:00.000Z</published>
+    <updated>2016-02-16T12:22:00.686Z</updated>
+    
+    <content type="html">&lt;p&gt;フロントエンド開発のタスクランナーとして Grunt や gulp、npm run-script なんかを使ってきたが、今は Make を使っている。フロントエンド分野ではあまり馴染みのないツールかもしれないが、必要十分な機能性と高い表現力のバランスの良さを実感し、一巡辿ってゴールにたどり着いた感がある。もっと流行ってほしい。&lt;/p&gt;
+&lt;p&gt;Make は Makefile に定義したルールにしたがってビルドプロセスを実行する。しかし Makefile には独特な表現が多く、&lt;code&gt;$@&lt;/code&gt; とかのマクロはググりようがなくてちょっとしんどい。とはいえ、いきなり高度な使い方をしようと思わなければ簡単なので、以下を参考に導入してみてほしい。&lt;/p&gt;
+&lt;h2 id=&quot;STEP_1-__u30B3_u30DE_u30F3_u30C9_u306E_u30A8_u30A4_u30EA_u30A2_u30B9_u3092_u66F8_u304F&quot;&gt;&lt;a href=&quot;#STEP_1-__u30B3_u30DE_u30F3_u30C9_u306E_u30A8_u30A4_u30EA_u30A2_u30B9_u3092_u66F8_u304F&quot; class=&quot;headerlink&quot; title=&quot;STEP 1. コマンドのエイリアスを書く&quot;&gt;&lt;/a&gt;STEP 1. コマンドのエイリアスを書く&lt;/h2&gt;&lt;p&gt;基本はただのエイリアスです。&lt;/p&gt;
+&lt;h3 id=&quot;JavaScript__u3092_u30D3_u30EB_u30C9_u3059_u308B_u4F8B&quot;&gt;&lt;a href=&quot;#JavaScript__u3092_u30D3_u30EB_u30C9_u3059_u308B_u4F8B&quot; class=&quot;headerlink&quot; title=&quot;JavaScript をビルドする例&quot;&gt;&lt;/a&gt;JavaScript をビルドする例&lt;/h3&gt;&lt;p&gt;次の Makefile があるディレクトリで &lt;code&gt;make build&lt;/code&gt; コマンドを実行すれば &lt;a href=&quot;https://github.com/substack/browserify-website&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Browserify&lt;/a&gt; でのビルドが実行される。&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;build:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	node_modules/.bin/browserify src/main.js -o dist/bundle.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;なお &lt;code&gt;build&lt;/code&gt; というタスク名的な部分のことを &lt;strong&gt;ターゲット&lt;/strong&gt; という。&lt;/p&gt;
+&lt;p&gt;ミニファイしたければ &lt;a href=&quot;https://github.com/mishoo/UglifyJS2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Uglify&lt;/a&gt; にパイプ、もしくは &lt;a href=&quot;https://github.com/hughsk/uglifyify&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;uglifyify&lt;/a&gt; トランスフォームすればいい。&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;build:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	node_modules/.bin/browserify src/main.js | \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	node_modules/.bin/uglifyjs -o dist/bundle.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;ターゲットの部分には生成したいファイル名、例えば dist/bundle.js などを指定できる。そうした場合の Makefile は以下のように、コマンドは &lt;code&gt;make dist/bundle.js&lt;/code&gt; となり、自然言語的に理解しやすくなる。&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dist/bundle.js:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@node_modules/.bin/browserify src/main.js | \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	node_modules/.bin/uglifyjs -o dist/bundle.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;なおコマンド部のはじめに &lt;code&gt;@&lt;/code&gt; をつけてみたが、これは実行するコマンドを標準出力しないための記号。コマンドを確認したければつけないままで OK。&lt;/p&gt;
+&lt;h3 id=&quot;JavaScript__u3092_u30A4_u30F3_u30AF_u30EA_u30E1_u30F3_u30BF_u30EB_u30D3_u30EB_u30C9_u3059_u308B_u4F8B&quot;&gt;&lt;a href=&quot;#JavaScript__u3092_u30A4_u30F3_u30AF_u30EA_u30E1_u30F3_u30BF_u30EB_u30D3_u30EB_u30C9_u3059_u308B_u4F8B&quot; class=&quot;headerlink&quot; title=&quot;JavaScript をインクリメンタルビルドする例&quot;&gt;&lt;/a&gt;JavaScript をインクリメンタルビルドする例&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/substack/watchify&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;watchify&lt;/a&gt; がそれ自身でインクリメンタルビルドする機能を持っているので、これを叩くだけ。&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;watch-js:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@node_modules/.bin/watchify src/main.js -o src/bundle.js -v -d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;STEP_2-__u4F9D_u5B58_u30BF_u30FC_u30B2_u30C3_u30C8_u3092_u66F8_u304F&quot;&gt;&lt;a href=&quot;#STEP_2-__u4F9D_u5B58_u30BF_u30FC_u30B2_u30C3_u30C8_u3092_u66F8_u304F&quot; class=&quot;headerlink&quot; title=&quot;STEP 2. 依存ターゲットを書く&quot;&gt;&lt;/a&gt;STEP 2. 依存ターゲットを書く&lt;/h2&gt;&lt;p&gt;上の Makefile は本当にただのエイリアスに過ぎないので、次は &lt;strong&gt;依存ターゲット&lt;/strong&gt; を導入する。&lt;/p&gt;
+&lt;p&gt;dist/bundle.js を生成するまでに必要な依存関係をリスト化してみると、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;dist/bundle.js は&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;browserify&lt;/code&gt; や &lt;code&gt;uglifyjs&lt;/code&gt; コマンドが使用できなければ出力できない。つまり Browserify や Uglify などの Node モジュールが格納されている &lt;em&gt;node_modules ディレクトリの存在に依存&lt;/em&gt; している。&lt;/li&gt;
+&lt;li&gt;dist/bundle.js は、 dist ディレクトリがないと出力できない。つまり &lt;em&gt;dist ディレクトリの存在に依存&lt;/em&gt; している。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;node_modules は&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;package.json ファイルを元に &lt;code&gt;npm install&lt;/code&gt; コマンドによって作られる。つまり &lt;em&gt;package.json ファイルの存在&lt;/em&gt; に依存している。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これらの依存関係の解決方法を Makefile で表現すると次のようになる。&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dist/bundle.js: node_modules dist&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@node_modules/.bin/browserify src/main.js | \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	node_modules/.bin/uglifyjs -o dist/bundle.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;dist:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@mkdir -p dist&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;node_modules: package.json&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@npm install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;このとき &lt;code&gt;make dist/bundle.js&lt;/code&gt; を実行すると、必要な依存を自動的に解決してくれる。つまり、初めに node_modules の解決のため &lt;code&gt;npm install&lt;/code&gt; が実行され、次に dist の解決のため &lt;code&gt;mkdir -p dist&lt;/code&gt; が実行される。最後に dist/bundle.js が生成される。つまり &lt;code&gt;make dist/bundle.js&lt;/code&gt; コマンド一つを実行すれば、他のコマンドを覚えたり実行せずにビルドできる。&lt;/p&gt;
+&lt;p&gt;しかもターゲットと依存ターゲットのファイルのタイムスタンプを比較し、更新が必要なければコマンドはスキップされる。例えば package.json よりも node_modules が新しければ、node_modules の更新は不要なので &lt;code&gt;npm install&lt;/code&gt; は実行されない。&lt;/p&gt;
+&lt;h2 id=&quot;STEP_3-__u4ED6_u306E_u7D99_u7D9A_u30D7_u30ED_u30BB_u30B9_u3092_u4E26_u5217_u5B9F_u884C_u3059_u308B&quot;&gt;&lt;a href=&quot;#STEP_3-__u4ED6_u306E_u7D99_u7D9A_u30D7_u30ED_u30BB_u30B9_u3092_u4E26_u5217_u5B9F_u884C_u3059_u308B&quot; class=&quot;headerlink&quot; title=&quot;STEP 3. 他の継続プロセスを並列実行する&quot;&gt;&lt;/a&gt;STEP 3. 他の継続プロセスを並列実行する&lt;/h2&gt;&lt;p&gt;ウェブサーバ越しに動作・表示確認するために &lt;a href=&quot;https://github.com/indexzero/http-server&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http-server&lt;/a&gt; を起動したいとする。さらに RESTful API モックサーバ &lt;a href=&quot;https://github.com/typicode/json-server&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;json-server&lt;/a&gt; を起動したいとする。とりあえずそれぞれのプロセスの起動のためのターゲットを定義すると以下のようになる。&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;run-dev-server: node_modules&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@node_modules/.bin/http-server&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;run-api-mock-server: node_modules&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@node_modules/.bin/json-server --watch db.json&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;watch-js:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@node_modules/.bin/watchify src/main.js -o src/bundle.js -v -d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;これらのプロセスは並列に実行したいもの。そんな時は Make の &lt;code&gt;j&lt;/code&gt; オプションでパラレル実行できるので、&lt;code&gt;make -j run-dev-server run-api-mock-server watch-js&lt;/code&gt; のようなコマンドを実行するといい。とはいえこのコマンドを毎回叩くのは面倒なので、これを更に Makefile に定義しておく。&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;watch:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@make -j run-dev-server run-api-mock-server watch-js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;こうすれば、&lt;code&gt;make watch&lt;/code&gt; すれば、3つのプロセスがパラレル実行される。仮にエラーでどれかのタスクが停止しても、Make のプロセスを止めればすべてのプロセスが止まるので、バックグラウンドでプロセスが残り続ける心配もない。npm run-script などで &lt;code&gt;&amp;amp;&lt;/code&gt; 区切りで実行すると、バックグラウンドプロセスが残りやすいので、これは便利。&lt;/p&gt;
+&lt;h2 id=&quot;STEP_4-__u5909_u6570_u3068_u304B_u30DE_u30AF_u30ED_u3068_u304B_u95A2_u6570_u3068_u304B_u4F7F_u3046&quot;&gt;&lt;a href=&quot;#STEP_4-__u5909_u6570_u3068_u304B_u30DE_u30AF_u30ED_u3068_u304B_u95A2_u6570_u3068_u304B_u4F7F_u3046&quot; class=&quot;headerlink&quot; title=&quot;STEP 4. 変数とかマクロとか関数とか使う&quot;&gt;&lt;/a&gt;STEP 4. 変数とかマクロとか関数とか使う&lt;/h2&gt;&lt;p&gt;ここまでの内容で十分に便利に使えるが、Makefile らしさを出すために以降では簡単なマクロを使う例を紹介する。ただししんどくなってきたら本末転倒なのでやめよう。&lt;/p&gt;
+&lt;p&gt;はじめのほうに書いた次の Makefile は、&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dist/bundle.js:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@node_modules/.bin/browserify src/main.js | \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	node_modules/.bin/uglifyjs -o dist/bundle.js&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;次の様に書き換えることができる。&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;constant&quot;&gt;SRC&lt;/span&gt;       = src&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;constant&quot;&gt;DIST&lt;/span&gt;      = dist&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;constant&quot;&gt;MAIN_JS&lt;/span&gt;   = &lt;span class=&quot;variable&quot;&gt;$(SRC)&lt;/span&gt;/main.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;constant&quot;&gt;BUNDLE_JS&lt;/span&gt; = &lt;span class=&quot;variable&quot;&gt;$(DIST)&lt;/span&gt;/bundle.js&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(BUNDLE_JS):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@node_modules/.bin/browserify &lt;span class=&quot;variable&quot;&gt;$(MAIN_JS)&lt;/span&gt; | \&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	node_modules/.bin/uglifyjs -o $@&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;変数定義 &lt;code&gt;VAR=foo&lt;/code&gt; と参照 &lt;code&gt;$(VAR)&lt;/code&gt;、更にターゲット名を表すマクロ &lt;code&gt;$@&lt;/code&gt; を導入した。&lt;/p&gt;
+&lt;h2 id=&quot;28_u756A_u5916_29_STEP_5-_Windows__u5BFE_u5FDC&quot;&gt;&lt;a href=&quot;#28_u756A_u5916_29_STEP_5-_Windows__u5BFE_u5FDC&quot; class=&quot;headerlink&quot; title=&quot;(番外) STEP 5. Windows 対応&quot;&gt;&lt;/a&gt;(番外) STEP 5. Windows 対応&lt;/h2&gt;&lt;p&gt;Windows よくわからないけど、MinGW とか使ってほしい。コマンドプロンプトでは諦めてほしい。こんな感じで &lt;code&gt;/&lt;/code&gt; を &lt;code&gt;\&lt;/code&gt; に置換する関数を使うといけたりもする。&lt;strong&gt;諦めてほしい&lt;/strong&gt;。&lt;/p&gt;
+&lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ifdef SystemRoot&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	fixPath = &lt;span class=&quot;variable&quot;&gt;$(subst /,\,$1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;else&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	fixPath = $1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;endif&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$(call fixPath,dist/bundle.js):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@&lt;span class=&quot;variable&quot;&gt;$(call fixPath,node_modules/.bin/browserify src/main.js -o dist/bundle.js)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Grunt_2C_gulp_2C_npm_run-script__u3068_u306E_u6BD4_u8F03&quot;&gt;&lt;a href=&quot;#Grunt_2C_gulp_2C_npm_run-script__u3068_u306E_u6BD4_u8F03&quot; class=&quot;headerlink&quot; title=&quot;Grunt, gulp, npm run-script との比較&quot;&gt;&lt;/a&gt;Grunt, gulp, npm run-script との比較&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Grunt 遅い、タスク定義が面倒。&lt;/li&gt;
+&lt;li&gt;gulp 早いけどタスク定義が面倒。&lt;/li&gt;
+&lt;li&gt;Grunt も gulp も、プラグイン化が必要。バージョンアップ追従のタイムラグや、中にはメンテナンスされなくなるものもあるので、プラグイン化されたものではなく生で使えるに越したことはない。&lt;/li&gt;
+&lt;li&gt;npm run-script は表現力が足りない。簡単なタスクならいいが、マルチラインやコメントが書けないので複雑なタスクは無理。&lt;/li&gt;
+&lt;li&gt;シェルスクリプトもいいけど、一貫したプラクティスを提供する Make のほうが乗っかりやすい。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;u30B5_u30F3_u30D7_u30EB&quot;&gt;&lt;a href=&quot;#u30B5_u30F3_u30D7_u30EB&quot; class=&quot;headerlink&quot; title=&quot;サンプル&quot;&gt;&lt;/a&gt;サンプル&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/keik/frontend-with-make&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/keik/frontend-with-make&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;git clone https://github.com/keik/frontend-with-make.git&lt;/code&gt; して &lt;code&gt;make&lt;/code&gt; すれば依存パッケージのインストールやら何やらができるはず。Makefile 活用例のサンプルなので、アプリ部分のショボさは無視してください。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;フロントエンド開発のタスクランナーとして Grunt や gulp、npm run-script なんかを使ってきたが、今は Make を使っている。フロントエンド分野ではあまり馴染みのないツールかもしれないが、必要十分な機能性と高い表現力のバランスの良さを実感し、一巡辿っ
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://blog.keik.info/tags/javascript/"/>
+    
+      <category term="make" scheme="http://blog.keik.info/tags/make/"/>
+    
+      <category term="task-runner" scheme="http://blog.keik.info/tags/task-runner/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>slickgrid-colgroup-plugin 作った</title>
+    <link href="http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/"/>
+    <id>http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/</id>
+    <published>2015-12-17T13:11:00.000Z</published>
+    <updated>2016-02-18T14:18:08.251Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/mleibman/SlickGrid&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SlickGrid&lt;/a&gt; のヘッダをグループ化するプラグイン &lt;a href=&quot;https://github.com/keik/slickgrid-colgroup-plugin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;slickgrid-colgroup-plugin&lt;/a&gt; を作ったので、ギョームシステムの開発とかにどうぞ。MIT。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://keik.github.io/slickgrid-colgroup-plugin/examples/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;デモページ&lt;/a&gt; にいくつかのサンプルを置いてます。&lt;/p&gt;
+&lt;p&gt;SlickGrid 自体についても簡単に紹介すると、大量のデータをグリッドで表示できることを特徴としたフレームワークで、その仕組としてはスクロールされるたびに表示領域の DOM 要素だけを動的に作り直すことによって大量データを少ない DOM 要素数で表現している。&lt;/p&gt;
+&lt;p&gt;プラグイン v1.0.4 における使い方は、SlickGrid オブジェクトにプラグインを登録して&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;grid.registerPlugin(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Slick.Plugins.ColGroup());&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;カラム定義で &lt;code&gt;children&lt;/code&gt; プロパティを用いてグループ構造を持ったカラム定義を与えるだけ。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; columns = [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#123;id: &lt;span class=&quot;string&quot;&gt;&#39;col1&#39;&lt;/span&gt;, name: &lt;span class=&quot;string&quot;&gt;&#39;col 1&#39;&lt;/span&gt;, children: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;id: &lt;span class=&quot;string&quot;&gt;&#39;col1-1&#39;&lt;/span&gt;, name: &lt;span class=&quot;string&quot;&gt;&#39;col 1-1&#39;&lt;/span&gt;, field: &lt;span class=&quot;string&quot;&gt;&#39;col1-1&#39;&lt;/span&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;id: &lt;span class=&quot;string&quot;&gt;&#39;col1-2&#39;&lt;/span&gt;, name: &lt;span class=&quot;string&quot;&gt;&#39;col 1-2&#39;&lt;/span&gt;, field: &lt;span class=&quot;string&quot;&gt;&#39;col1-2&#39;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ]&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#123;id: &lt;span class=&quot;string&quot;&gt;&#39;col2&#39;&lt;/span&gt;, name: &lt;span class=&quot;string&quot;&gt;&#39;col 2&#39;&lt;/span&gt;, children: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;id: &lt;span class=&quot;string&quot;&gt;&#39;col2-1&#39;&lt;/span&gt;, name: &lt;span class=&quot;string&quot;&gt;&#39;col 2-1&#39;&lt;/span&gt;, field: &lt;span class=&quot;string&quot;&gt;&#39;col2-1&#39;&lt;/span&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;id: &lt;span class=&quot;string&quot;&gt;&#39;col2-2&#39;&lt;/span&gt;, name: &lt;span class=&quot;string&quot;&gt;&#39;col 2-2&#39;&lt;/span&gt;, children: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#123;id: &lt;span class=&quot;string&quot;&gt;&#39;col2-2-1&#39;&lt;/span&gt;, name: &lt;span class=&quot;string&quot;&gt;&#39;col 2-2-1&#39;&lt;/span&gt;, field: &lt;span class=&quot;string&quot;&gt;&#39;col2-2-1&#39;&lt;/span&gt;&amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &amp;#123;id: &lt;span class=&quot;string&quot;&gt;&#39;col2-2-2&#39;&lt;/span&gt;, name: &lt;span class=&quot;string&quot;&gt;&#39;col 2-2-2&#39;&lt;/span&gt;, field: &lt;span class=&quot;string&quot;&gt;&#39;col2-2-2&#39;&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ]&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/mleibman/SlickGrid&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SlickGrid&lt;/a&gt; のヘッダをグループ化するプラグイン &lt;a href=&quot;https://github.co
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://blog.keik.info/tags/javascript/"/>
+    
+      <category term="slickgrid" scheme="http://blog.keik.info/tags/slickgrid/"/>
+    
+  </entry>
+  
+</feed>
