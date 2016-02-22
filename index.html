@@ -62,6 +62,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-release-ac-box" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/02/22/release-ac-box/" class="article-date">
+  <time datetime="2016-02-22T01:49:25.000Z" itemprop="datePublished">2016-02-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/22/release-ac-box/">オートコンプリートライブラリを作った話と UI 実装のテクニックについて</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>シンプルなオートコンプリートコンボボックス UI ライブラリ <a href="https://github.com/keik/ac-box" target="_blank" rel="external">ac-box</a> を作った。<a href="http://keik.info/ac-box/examples/" target="_blank" rel="external">デモはこちら</a>。</p>
+<h2 id="u7279_u5FB4"><a href="#u7279_u5FB4" class="headerlink" title="特徴"></a>特徴</h2><ul>
+<li>他の大きなライブラリに依存しない。スタンドアロン版ミニファイ済み 9KB。</li>
+<li>UI の位置は自動で fix される。ボーダや背景などの装飾部分は独自に定義する。</li>
+</ul>
+<h2 id="u4F7F_u3044_u65B9"><a href="#u4F7F_u3044_u65B9" class="headerlink" title="使い方"></a>使い方</h2><p><a href="https://github.com/keik/ac-box#readme" target="_blank" rel="external">README</a> を参照してください。</p>
+<h2 id="Typeahead__u3068_u304B_jQuery_UI__u3068_u304B_u3042_u308B_u3051_u3069_uFF1F"><a href="#Typeahead__u3068_u304B_jQuery_UI__u3068_u304B_u3042_u308B_u3051_u3069_uFF1F" class="headerlink" title="Typeahead とか jQuery UI とかあるけど？"></a>Typeahead とか jQuery UI とかあるけど？</h2><p>jQuery に依存したくない。</p>
+<h2 id="u301C_u3059_u308B_u6A5F_u80FD_u306F_u306A_u3044_u306E_uFF1F"><a href="#u301C_u3059_u308B_u6A5F_u80FD_u306F_u306A_u3044_u306E_uFF1F" class="headerlink" title="〜する機能はないの？"></a>〜する機能はないの？</h2><p><a href="https://github.com/keik/ac-box/issues" target="_blank" rel="external">issue</a> にもらえれば対応できるかもしれないです。</p>
+<h1 id="UI__u5B9F_u88C5_u306E_u30C6_u30AF_u30CB_u30C3_u30AF"><a href="#UI__u5B9F_u88C5_u306E_u30C6_u30AF_u30CB_u30C3_u30AF" class="headerlink" title="UI 実装のテクニック"></a>UI 実装のテクニック</h1><p>オートコンプリートは、シンプルな機能ながらも微妙に細かなインタラクションがあるため、UI 実装の練習になる。このライブラリでも使っている UI 実装のテクニックをいくつかメモした。興味のある方は参考にしてください。</p>
+<h2 id="Flux"><a href="#Flux" class="headerlink" title="Flux"></a>Flux</h2><p><a href="http://facebook.github.io/flux/docs/overview.html#content" target="_blank" rel="external">Flux</a> アーキテクチャを実装している。<a href="https://github.com/keik/ac-box/blob/master/src/event-emitter.js" target="_blank" rel="external">ミニマムな Event Emitter はこんな感じ</a>。このライブラリだとストアの操作がほとんどないので、あまり意味はないけれど。</p>
+<p>Flux アーキテクチャは、MVC アーキテクチャの一つの例でしかない。ところが、最近は MVC アーキテクチャの派生系が次々に登場してきて、もうこれ何が MVC だかわかんねえなっていう状況の中、Observer Pattern + Command Pattern による MVC アーキテクチャに単一データフローという制約を加えたもの改めて Flux という名前で再定義した。そうすることでたびたび発生していた MVC カオスに巻き込まれるのを回避して、初学者にも混乱なく分かりやすく使い始められるという印象を受ける。</p>
+<h2 id="View__u30B9_u30C6_u30FC_u30C8_u3068_u30EC_u30F3_u30C0_u30E9_u30FC_u306B_u3088_u308B_u63CF_u753B"><a href="#View__u30B9_u30C6_u30FC_u30C8_u3068_u30EC_u30F3_u30C0_u30E9_u30FC_u306B_u3088_u308B_u63CF_u753B" class="headerlink" title="View ステートとレンダラーによる描画"></a>View ステートとレンダラーによる描画</h2><p>UI の状態制御には、次のような、View ステートとレンダラーを使った実装方法がある。</p>
+<ol>
+<li><p>イベントハンドラ内で、次のような View ステートのプロパティを更新する</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.state = &#123;</span><br><span class="line">  <span class="comment">// オートコンプリートメニュー開閉状態。input にフォーカスあたったら true にしたりする</span></span><br><span class="line">  isOpen: <span class="literal">null</span>,</span><br><span class="line">  <span class="comment">// input に設定する値。ESC でメニュー選択を中断したりしたいので、DOM 要素のプロパティ外にステートとして保持する</span></span><br><span class="line">  value: <span class="literal">null</span>,</span><br><span class="line">  <span class="comment">// オートコンプリートメニュー内でフォーカスがあたっている場所を表す数字。UP とか DOWN でインクリ / デクリメントする</span></span><br><span class="line">  focusedIndex: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>その後レンダリング関数をコール。レンダリング関数は View ステートを参照して DOM 要素を更新する</p>
+</li>
+</ol>
+<p>この方式の場合、レンダリング関数が割とクソ実装な見栄えになってしまうことがある。それでも、そこそこ複雑なインタラクションのある UI を制御するにはこの方法がいい。</p>
+<p>対比として、イベントハンドラ内で直接 DOM 要素を更新する実装を考えた場合、連続的に発生するイベントに対して表示状態の一貫性が保てずに破綻しがちになる。例えば、<code>click</code> イベントでメニューを選択するというイベントハンドラを実装する際、気持ちの上では <code>click</code> のみ Listen したい。だが実際には <code>mousedown</code> や <code>mouseup</code> や <code>blur</code> や <code>focus</code> などのイベントが連続的に発生する。これらのイベントハンドラと整合させつつ描画を更新する場合に View ステートというクッションを挟むことで、制御がしやすくなる。オプションで動作にバリエーションをもたせるような場合にも拡張しやすい。</p>
+<p>そして View ステートから DOM 要素の更新を最小パッチで自動的に行うのが、我らがイケメン <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> なのでライブラリではなくアプリを作るなら React 使うといいと思う。他に <a href="https://github.com/Reactive-Extensions/RxJS" target="_blank" rel="external">RxJS</a> も気になるが、まだ使ったことがない。</p>
+<h2 id="u753B_u50CF_u3092_u4F7F_u308F_u306A_u3044"><a href="#u753B_u50CF_u3092_u4F7F_u308F_u306A_u3044" class="headerlink" title="画像を使わない"></a>画像を使わない</h2><p>メニュー展開状態を示すキャレットアイコンなどは CSS の <code>border</code> プロパティで作り、画像は使っていない。外部アセットファイルを増やしたくないから。Bootstrap のキャレットもこうやって作られているし、割と定番なテクニック。</p>
+<h2 id="u30C8_u30EC_u30FC_u30B9_u30ED_u30B0_u3092_u57CB_u3081_u8FBC_u3080"><a href="#u30C8_u30EC_u30FC_u30B9_u30ED_u30B0_u3092_u57CB_u3081_u8FBC_u3080" class="headerlink" title="トレースログを埋め込む"></a>トレースログを埋め込む</h2><p>UI 実装は、ユーザ操作とのインタラクションによってコールされる関数の順序性などを確認しながら行いたいもの。それにパフォーマンスも気になる。そこで、<code>console.log</code> ではなく <a href="https://github.com/visionmedia/debug" target="_blank" rel="external">debug</a> を使って各関数の頭にトレースログを埋め込むというのをオススメ。簡易なパフォーマンス計測やトレースログのフィルタやログの色分けなどができて便利。</p>
+<p>そしてリリースビルドには debug をバンドルしたくないので、<a href="https://github.com/keik/undebuggify" target="_blank" rel="external">undebuggify</a> で debug 関連コードを除去するトランスフォームをすると具合がいい。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.keik.info/2016/02/22/release-ac-box/" data-id="ciky51bmp0005bdgzlw1lcw3r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ac-box/">ac-box</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/autocomplete/">autocomplete</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/combobox/">combobox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flux/">flux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-release-undebuggify" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/18/release-undebuggify/" class="article-date">
@@ -98,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2016/02/18/release-undebuggify/" data-id="ciky1upyh0005mggzf9lo8k0o" class="article-share-link">Share</a>
+      <a data-url="http://blog.keik.info/2016/02/18/release-undebuggify/" data-id="ciky51bmx000fbdgzv7r9vy4s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ast/">ast</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform/">transform</a></li></ul>
@@ -188,7 +251,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2016/02/16/frontend/" data-id="ciky1upyp000dmggzsbdqn2yp" class="article-share-link">Share</a>
+      <a data-url="http://blog.keik.info/2016/02/16/frontend/" data-id="ciky51bn7000nbdgzfdfb8ejl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/make/">make</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/task-runner/">task-runner</a></li></ul>
@@ -233,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/" data-id="ciky1upt20000mggz180j8ems" class="article-share-link">Share</a>
+      <a data-url="http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/" data-id="ciky51blt0000bdgzh0wyuhn4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/slickgrid/">slickgrid</a></li></ul>
@@ -257,7 +320,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ast/">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browserify/">browserify</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/make/">make</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/slickgrid/">slickgrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/task-runner/">task-runner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transform/">transform</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ac-box/">ac-box</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ast/">ast</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/autocomplete/">autocomplete</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browserify/">browserify</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/combobox/">combobox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flux/">flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/make/">make</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/slickgrid/">slickgrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/task-runner/">task-runner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/transform/">transform</a></li></ul>
     </div>
   </div>
 
@@ -267,7 +330,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ast/" style="font-size: 10px;">ast</a> <a href="/tags/browserify/" style="font-size: 10px;">browserify</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/make/" style="font-size: 10px;">make</a> <a href="/tags/slickgrid/" style="font-size: 10px;">slickgrid</a> <a href="/tags/task-runner/" style="font-size: 10px;">task-runner</a> <a href="/tags/transform/" style="font-size: 10px;">transform</a>
+      <a href="/tags/ac-box/" style="font-size: 10px;">ac-box</a> <a href="/tags/ast/" style="font-size: 10px;">ast</a> <a href="/tags/autocomplete/" style="font-size: 10px;">autocomplete</a> <a href="/tags/browserify/" style="font-size: 10px;">browserify</a> <a href="/tags/combobox/" style="font-size: 10px;">combobox</a> <a href="/tags/flux/" style="font-size: 10px;">flux</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/make/" style="font-size: 10px;">make</a> <a href="/tags/slickgrid/" style="font-size: 10px;">slickgrid</a> <a href="/tags/task-runner/" style="font-size: 10px;">task-runner</a> <a href="/tags/transform/" style="font-size: 10px;">transform</a>
     </div>
   </div>
 
@@ -287,6 +350,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/02/22/release-ac-box/">オートコンプリートライブラリを作った話と UI 実装のテクニックについて</a>
+          </li>
         
           <li>
             <a href="/2016/02/18/release-undebuggify/">undebuggify リリースした</a>
