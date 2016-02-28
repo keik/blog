@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://blog.keik.info/2016/02/28/java-with-frontend/index.html">
 <meta property="og:site_name" content="blog.keik.info">
 <meta property="og:description" content="ウェブアプリにおける JavaScript と CSS の役割・規模・複雑度が年々ヤバいことになってきているのは今更言うまでもない。今や JavaScript は、モジュールごとに分割して TypeScript や次期仕様の ECMAscript といったいわゆる altJS で記述されたのち、変換 (Transpile)・結合 (Concatinate)・最小化 (Minify) されてリリース">
-<meta property="og:updated_time" content="2016-02-28T09:38:08.080Z">
+<meta property="og:updated_time" content="2016-02-28T09:40:21.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java とフロントエンドの付き合い方、それとチュートリアル">
 <meta name="twitter:description" content="ウェブアプリにおける JavaScript と CSS の役割・規模・複雑度が年々ヤバいことになってきているのは今更言うまでもない。今や JavaScript は、モジュールごとに分割して TypeScript や次期仕様の ECMAscript といったいわゆる altJS で記述されたのち、変換 (Transpile)・結合 (Concatinate)・最小化 (Minify) されてリリース">
@@ -153,7 +153,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% npm install watchify --save-dev</span><br></pre></td></tr></table></figure>
 <p>watchify の使い方は Browserify とほぼ同じだ。基本的には自動ビルドするかしないかだけの違いしかない。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">% node_modules/.bin/watchify scripts/main.js -o ../todo-app/src/main/resources/static/bundle.js -v -m</span><br></pre></td></tr></table></figure>
-<p>追加した <code>-v</code> オプションは、再ビルドの実行結果が標準出力するためのもので、動作状況を確認するために付けておいたほうが便利だ。<code>-d</code> オプションは、変換後のファイルに TODO sourcemap をバンドルするためのもので、これによって Chrome デベロッパーツールなどで結合前のファイルが表示できるようになるためデバッグに便利だ。</p>
+<p>追加した <code>-v</code> オプションは、再ビルドの実行結果が標準出力するためのもので、動作状況を確認するために付けておいたほうが便利だ。<code>-d</code> オプションは、変換後のファイルに Source Map をバンドルするためのもので、これによって Chrome デベロッパーツールなどで結合前のファイルが表示できるようになるためデバッグに便利だ。</p>
 <p>上のコマンドを実行した状態で、main.js に適当な編集を加えてみよう。自動的に再ビルドされ bundle.js が更新されるはずだ。再ビルドは思ったより早く終わることだろう。Node のストリームのパフォーマンスの素晴らしさに感動しよう。</p>
 <p>このコマンドのエイリアスも、Makefile に追加しておこう。</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">watch-js: node_modules $(STATIC_DIR)</span><br><span class="line">	@node_modules/.bin/watchify scripts/main.js -o <span class="variable">$(STATIC_DIR)</span>/bundle.js -v -m</span><br></pre></td></tr></table></figure>

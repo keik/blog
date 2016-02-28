@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.keik.info/"/>
-  <updated>2016-02-28T09:38:08.080Z</updated>
+  <updated>2016-02-28T09:40:21.093Z</updated>
   <id>http://blog.keik.info/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.keik.info/2016/02/28/java-with-frontend/"/>
     <id>http://blog.keik.info/2016/02/28/java-with-frontend/</id>
     <published>2016-02-28T09:00:00.000Z</published>
-    <updated>2016-02-28T09:38:08.080Z</updated>
+    <updated>2016-02-28T09:40:21.093Z</updated>
     
     <content type="html">&lt;p&gt;ウェブアプリにおける JavaScript と CSS の役割・規模・複雑度が年々ヤバいことになってきているのは今更言うまでもない。今や JavaScript は、モジュールごとに分割して TypeScript や次期仕様の ECMAscript といったいわゆる altJS で記述されたのち、変換 (Transpile)・結合 (Concatinate)・最小化 (Minify) されてリリースされる。&lt;/p&gt;
 &lt;p&gt;ウェブアプリ開発において今時 (?) の言語を使う職場やコミュニティでは、フロントエンド絡みのビルドはある程度定着していることだろう。それには、&lt;a href=&quot;http://rubyonrails.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ruby on Rails&lt;/a&gt; における &lt;a href=&quot;https://github.com/rails/sprockets&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sprockets&lt;/a&gt; のような、フロントエンド開発をサポートする優れたライブラリの存在によって、手軽に方法論を取り入れることができたり、コミュニティ内に情報が流通する機会がもたらされていることにも関係があると思う。&lt;/p&gt;
@@ -91,7 +91,7 @@
 &lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;% npm install watchify --save-dev&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;watchify の使い方は Browserify とほぼ同じだ。基本的には自動ビルドするかしないかだけの違いしかない。&lt;/p&gt;
 &lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;% node_modules/.bin/watchify scripts/main.js -o ../todo-app/src/main/resources/static/bundle.js -v -m&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;追加した &lt;code&gt;-v&lt;/code&gt; オプションは、再ビルドの実行結果が標準出力するためのもので、動作状況を確認するために付けておいたほうが便利だ。&lt;code&gt;-d&lt;/code&gt; オプションは、変換後のファイルに TODO sourcemap をバンドルするためのもので、これによって Chrome デベロッパーツールなどで結合前のファイルが表示できるようになるためデバッグに便利だ。&lt;/p&gt;
+&lt;p&gt;追加した &lt;code&gt;-v&lt;/code&gt; オプションは、再ビルドの実行結果が標準出力するためのもので、動作状況を確認するために付けておいたほうが便利だ。&lt;code&gt;-d&lt;/code&gt; オプションは、変換後のファイルに Source Map をバンドルするためのもので、これによって Chrome デベロッパーツールなどで結合前のファイルが表示できるようになるためデバッグに便利だ。&lt;/p&gt;
 &lt;p&gt;上のコマンドを実行した状態で、main.js に適当な編集を加えてみよう。自動的に再ビルドされ bundle.js が更新されるはずだ。再ビルドは思ったより早く終わることだろう。Node のストリームのパフォーマンスの素晴らしさに感動しよう。&lt;/p&gt;
 &lt;p&gt;このコマンドのエイリアスも、Makefile に追加しておこう。&lt;/p&gt;
 &lt;figure class=&quot;highlight makefile&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;watch-js: node_modules $(STATIC_DIR)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	@node_modules/.bin/watchify scripts/main.js -o &lt;span class=&quot;variable&quot;&gt;$(STATIC_DIR)&lt;/span&gt;/bundle.js -v -m&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
