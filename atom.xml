@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.keik.info/"/>
-  <updated>2016-02-28T09:37:05.145Z</updated>
+  <updated>2016-02-28T09:38:08.080Z</updated>
   <id>http://blog.keik.info/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <title>Java とフロントエンドの付き合い方、それとチュートリアル</title>
     <link href="http://blog.keik.info/2016/02/28/java-with-frontend/"/>
     <id>http://blog.keik.info/2016/02/28/java-with-frontend/</id>
-    <published>2016-02-27T15:44:37.000Z</published>
-    <updated>2016-02-28T09:37:05.145Z</updated>
+    <published>2016-02-28T09:00:00.000Z</published>
+    <updated>2016-02-28T09:38:08.080Z</updated>
     
     <content type="html">&lt;p&gt;ウェブアプリにおける JavaScript と CSS の役割・規模・複雑度が年々ヤバいことになってきているのは今更言うまでもない。今や JavaScript は、モジュールごとに分割して TypeScript や次期仕様の ECMAscript といったいわゆる altJS で記述されたのち、変換 (Transpile)・結合 (Concatinate)・最小化 (Minify) されてリリースされる。&lt;/p&gt;
 &lt;p&gt;ウェブアプリ開発において今時 (?) の言語を使う職場やコミュニティでは、フロントエンド絡みのビルドはある程度定着していることだろう。それには、&lt;a href=&quot;http://rubyonrails.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ruby on Rails&lt;/a&gt; における &lt;a href=&quot;https://github.com/rails/sprockets&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sprockets&lt;/a&gt; のような、フロントエンド開発をサポートする優れたライブラリの存在によって、手軽に方法論を取り入れることができたり、コミュニティ内に情報が流通する機会がもたらされていることにも関係があると思う。&lt;/p&gt;
