@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>blog.keik.info</title>
+  <title>Java とフロントエンドの付き合い方、それとチュートリアル | blog.keik.info</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="blog.keik.info">
-<meta property="og:url" content="http://blog.keik.info/index.html">
+  <meta name="description" content="ウェブアプリにおける JavaScript と CSS の役割・規模・複雑度が年々ヤバいことになってきているのは今更言うまでもない。今や JavaScript は、モジュールごとに分割して TypeScript や次期仕様の ECMAscript といったいわゆる altJS で記述されたのち、変換 (Transpile)・結合 (Concatinate)・最小化 (Minify) されてリリース">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java とフロントエンドの付き合い方、それとチュートリアル">
+<meta property="og:url" content="http://blog.keik.info/2016/02/28/java-with-frontend/index.html">
 <meta property="og:site_name" content="blog.keik.info">
-<meta property="og:description">
+<meta property="og:description" content="ウェブアプリにおける JavaScript と CSS の役割・規模・複雑度が年々ヤバいことになってきているのは今更言うまでもない。今や JavaScript は、モジュールごとに分割して TypeScript や次期仕様の ECMAscript といったいわゆる altJS で記述されたのち、変換 (Transpile)・結合 (Concatinate)・最小化 (Minify) されてリリース">
+<meta property="og:updated_time" content="2016-02-28T09:37:05.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog.keik.info">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Java とフロントエンドの付き合い方、それとチュートリアル">
+<meta name="twitter:description" content="ウェブアプリにおける JavaScript と CSS の役割・規模・複雑度が年々ヤバいことになってきているのは今更言うまでもない。今や JavaScript は、モジュールごとに分割して TypeScript や次期仕様の ECMAscript といったいわゆる altJS で記述されたのち、変換 (Transpile)・結合 (Concatinate)・最小化 (Minify) されてリリース">
   
     <link rel="alternate" href="/atom.xml" title="blog.keik.info" type="application/atom+xml">
   
@@ -61,9 +62,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-java-with-frontend" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-java-with-frontend" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/28/java-with-frontend/" class="article-date">
   <time datetime="2016-02-27T15:44:37.000Z" itemprop="datePublished">2016-02-28</time>
@@ -76,8 +75,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/28/java-with-frontend/">Java とフロントエンドの付き合い方、それとチュートリアル</a>
+    <h1 class="article-title" itemprop="name">
+      Java とフロントエンドの付き合い方、それとチュートリアル
     </h1>
   
 
@@ -215,256 +214,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-release-ac-box" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/22/release-ac-box/" class="article-date">
-  <time datetime="2016-02-22T13:49:25.000Z" itemprop="datePublished">2016-02-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/22/release-ac-box/">オートコンプリートライブラリを作った話と UI 実装のテクニックについて</a>
-    </h1>
+    <a href="/2016/02/22/release-ac-box/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">オートコンプリートライブラリを作った話と UI 実装のテクニックについて</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>シンプルなオートコンプリートコンボボックス UI ライブラリ <a href="https://github.com/keik/ac-box" target="_blank" rel="external">ac-box</a> を作った。<a href="http://keik.info/ac-box/examples/" target="_blank" rel="external">デモはこちら</a>。</p>
-<h2 id="u7279_u5FB4"><a href="#u7279_u5FB4" class="headerlink" title="特徴"></a>特徴</h2><ul>
-<li>他の大きなライブラリに依存しない。スタンドアロン版ミニファイ済み 9KB。</li>
-<li>UI の位置は自動で fix される。ボーダや背景などの装飾部分は独自に定義する。</li>
-</ul>
-<h2 id="u4F7F_u3044_u65B9"><a href="#u4F7F_u3044_u65B9" class="headerlink" title="使い方"></a>使い方</h2><p><a href="https://github.com/keik/ac-box#readme" target="_blank" rel="external">README</a> を参照してください。</p>
-<h2 id="Typeahead__u3068_u304B_jQuery_UI__u3068_u304B_u3042_u308B_u3051_u3069_uFF1F"><a href="#Typeahead__u3068_u304B_jQuery_UI__u3068_u304B_u3042_u308B_u3051_u3069_uFF1F" class="headerlink" title="Typeahead とか jQuery UI とかあるけど？"></a>Typeahead とか jQuery UI とかあるけど？</h2><p>jQuery に依存したくない。</p>
-<h2 id="u301C_u3059_u308B_u6A5F_u80FD_u306F_u306A_u3044_u306E_uFF1F"><a href="#u301C_u3059_u308B_u6A5F_u80FD_u306F_u306A_u3044_u306E_uFF1F" class="headerlink" title="〜する機能はないの？"></a>〜する機能はないの？</h2><p><a href="https://github.com/keik/ac-box/issues" target="_blank" rel="external">issue</a> にもらえれば対応できるかもしれないです。</p>
-<h1 id="UI__u5B9F_u88C5_u306E_u30C6_u30AF_u30CB_u30C3_u30AF"><a href="#UI__u5B9F_u88C5_u306E_u30C6_u30AF_u30CB_u30C3_u30AF" class="headerlink" title="UI 実装のテクニック"></a>UI 実装のテクニック</h1><p>オートコンプリートは、シンプルな機能ながらも微妙に細かなインタラクションがあるため、UI 実装の練習になる。このライブラリでも使っている UI 実装のテクニックをいくつかメモした。興味のある方は参考にしてください。</p>
-<h2 id="Flux"><a href="#Flux" class="headerlink" title="Flux"></a>Flux</h2><p><a href="http://facebook.github.io/flux/docs/overview.html#content" target="_blank" rel="external">Flux</a> アーキテクチャを実装している。<a href="https://github.com/keik/ac-box/blob/master/src/event-emitter.js" target="_blank" rel="external">ミニマムな Event Emitter はこんな感じ</a>。このライブラリだとストアの操作がほとんどないので、あまり意味はないけれど。</p>
-<p>Flux アーキテクチャは、MVC アーキテクチャの一つの例でしかない。ところが、最近は MVC アーキテクチャの派生系が次々に登場してきて、もうこれ何が MVC だかわかんねえなっていう状況の中、Observer Pattern + Command Pattern による MVC アーキテクチャに単一データフローという制約を加えたもの改めて Flux という名前で再定義した。そうすることでたびたび発生していた MVC カオスに巻き込まれるのを回避して、初学者にも混乱なく分かりやすく使い始められるという印象を受ける。</p>
-<h2 id="View__u30B9_u30C6_u30FC_u30C8_u3068_u30EC_u30F3_u30C0_u30E9_u30FC_u306B_u3088_u308B_u63CF_u753B"><a href="#View__u30B9_u30C6_u30FC_u30C8_u3068_u30EC_u30F3_u30C0_u30E9_u30FC_u306B_u3088_u308B_u63CF_u753B" class="headerlink" title="View ステートとレンダラーによる描画"></a>View ステートとレンダラーによる描画</h2><p>UI の状態制御には、次のような、View ステートとレンダラーを使った実装方法がある。</p>
-<ol>
-<li><p>イベントハンドラ内で、次のような View ステートのプロパティを更新する</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.state = &#123;</span><br><span class="line">  <span class="comment">// オートコンプリートメニュー開閉状態。input にフォーカスあたったら true にしたりする</span></span><br><span class="line">  isOpen: <span class="literal">null</span>,</span><br><span class="line">  <span class="comment">// input に設定する値。ESC でメニュー選択を中断したりしたいので、DOM 要素のプロパティ外にステートとして保持する</span></span><br><span class="line">  value: <span class="literal">null</span>,</span><br><span class="line">  <span class="comment">// オートコンプリートメニュー内でフォーカスがあたっている場所を表す数字。UP とか DOWN でインクリ / デクリメントする</span></span><br><span class="line">  focusedIndex: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>その後レンダリング関数をコール。レンダリング関数は View ステートを参照して DOM 要素を更新する</p>
-</li>
-</ol>
-<p>この方式の場合、レンダリング関数が割とクソ実装な見栄えになってしまうことがある。それでも、そこそこ複雑なインタラクションのある UI を制御するにはこの方法がいい。</p>
-<p>対比として、イベントハンドラ内で直接 DOM 要素を更新する実装を考えた場合、連続的に発生するイベントに対して表示状態の一貫性が保てずに破綻しがちになる。例えば、<code>click</code> イベントでメニューを選択するというイベントハンドラを実装する際、気持ちの上では <code>click</code> のみ Listen したい。だが実際には <code>mousedown</code> や <code>mouseup</code> や <code>blur</code> や <code>focus</code> などのイベントが連続的に発生する。これらのイベントハンドラと整合させつつ描画を更新する場合に View ステートというクッションを挟むことで、制御がしやすくなる。オプションで動作にバリエーションをもたせるような場合にも拡張しやすい。</p>
-<p>そして View ステートから DOM 要素の更新を最小パッチで自動的に行うのが、我らがイケメン <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a> なのでライブラリではなくアプリを作るなら React 使うといいと思う。他に <a href="https://github.com/Reactive-Extensions/RxJS" target="_blank" rel="external">RxJS</a> も気になるが、まだ使ったことがない。</p>
-<h2 id="u753B_u50CF_u3092_u4F7F_u308F_u306A_u3044"><a href="#u753B_u50CF_u3092_u4F7F_u308F_u306A_u3044" class="headerlink" title="画像を使わない"></a>画像を使わない</h2><p>メニュー展開状態を示すキャレットアイコンなどは CSS の <code>border</code> プロパティで作り、画像は使っていない。外部アセットファイルを増やしたくないから。Bootstrap のキャレットもこうやって作られているし、割と定番なテクニック。</p>
-<h2 id="u30C8_u30EC_u30FC_u30B9_u30ED_u30B0_u3092_u57CB_u3081_u8FBC_u3080"><a href="#u30C8_u30EC_u30FC_u30B9_u30ED_u30B0_u3092_u57CB_u3081_u8FBC_u3080" class="headerlink" title="トレースログを埋め込む"></a>トレースログを埋め込む</h2><p>UI 実装は、ユーザ操作とのインタラクションによってコールされる関数の順序性などを確認しながら行いたいもの。それにパフォーマンスも気になる。そこで、<code>console.log</code> ではなく <a href="https://github.com/visionmedia/debug" target="_blank" rel="external">debug</a> を使って各関数の頭にトレースログを埋め込むというのをオススメ。簡易なパフォーマンス計測やトレースログのフィルタやログの色分けなどができて便利。</p>
-<p>そしてリリースビルドには debug をバンドルしたくないので、<a href="https://github.com/keik/undebuggify" target="_blank" rel="external">undebuggify</a> で debug 関連コードを除去するトランスフォームをすると具合がいい。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2016/02/22/release-ac-box/" data-id="cil5aypyl000j8xgzzwq3fnqe" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ac-box/">ac-box</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/autocomplete/">autocomplete</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/combobox/">combobox</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flux/">flux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-release-undebuggify" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/18/release-undebuggify/" class="article-date">
-  <time datetime="2016-02-18T14:18:57.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/release-undebuggify/">undebuggify リリースした</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://github.com/visionmedia/debug" target="_blank" rel="external">debug</a> を使用しているコードを AST を辿って削除する Browserify Transform モジュール <a href="https://github.com/keik/undebuggify" target="_blank" rel="external">undebuggify</a> を作ったのでご活用ください。使用例は README.md に書いてあります。</p>
-<h2 id="debug__u3063_u3066_u4F55"><a href="#debug__u3063_u3066_u4F55" class="headerlink" title="debug って何"></a>debug って何</h2><p>ロガー。個人的に JavaScript でトレースログを埋め込む際は <code>console.log</code> ではなく debug を常用している。なぜなら</p>
-<ul>
-<li>ログを埋め込んだモジュールごとに異なる色で出力される</li>
-<li>前回ログ出力からの経過時間などが出力される</li>
-<li>環境変数をいじることで出力したいログを絞り込むことができる</li>
-</ul>
-<p>など便利な機能があるから。</p>
-<h2 id="u306A_u305C_debug__u3092_u524A_u9664_u3059_u308B_u5FC5_u8981_u304C_u3042_u308B_u306E_u304B"><a href="#u306A_u305C_debug__u3092_u524A_u9664_u3059_u308B_u5FC5_u8981_u304C_u3042_u308B_u306E_u304B" class="headerlink" title="なぜ debug を削除する必要があるのか"></a>なぜ debug を削除する必要があるのか</h2><p>ウェブブラウザ向けスクリプトをリリースする際、ログ出力コードは削除しておきたい。第一にダサいし、また debug の 4KB のコードをバンドルしたくないから。</p>
-<h2 id="debug__u3058_u3083_u306A_u304F_u3066_console-log__u4F7F_u3063_u3066_u3044_u308B_u3093_u3060_u3051_u3069"><a href="#debug__u3058_u3083_u306A_u304F_u3066_console-log__u4F7F_u3063_u3066_u3044_u308B_u3093_u3060_u3051_u3069" class="headerlink" title="debug じゃなくて console.log 使っているんだけど"></a>debug じゃなくて console.log 使っているんだけど</h2><p><a href="https://github.com/alanshaw/stripify" target="_blank" rel="external">stripify</a> をご活用ください。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2016/02/18/release-undebuggify/" data-id="cil5aypyw000t8xgz1uqee0le" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ast/">ast</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browserify/">browserify</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transform/">transform</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-frontend" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/16/frontend/" class="article-date">
-  <time datetime="2016-02-16T12:00:00.000Z" itemprop="datePublished">2016-02-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/16/frontend/">Grunt や gulp のかわりに Make も使ってみよう</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>フロントエンド開発のタスクランナーとして Grunt や gulp、npm run-script なんかを使ってきたが、今は Make を使っている。フロントエンド分野ではあまり馴染みのないツールかもしれないが、必要十分な機能性と高い表現力のバランスの良さを実感し、一巡辿ってゴールにたどり着いた感がある。もっと流行ってほしい。</p>
-<p>Make は Makefile に定義したルールにしたがってビルドプロセスを実行する。しかし Makefile には独特な表現が多く、<code>$@</code> とかのマクロはググりようがなくてちょっとしんどい。とはいえ、いきなり高度な使い方をしようと思わなければ簡単なので、以下を参考に導入してみてほしい。</p>
-<h2 id="STEP_1-__u30B3_u30DE_u30F3_u30C9_u306E_u30A8_u30A4_u30EA_u30A2_u30B9_u3092_u66F8_u304F"><a href="#STEP_1-__u30B3_u30DE_u30F3_u30C9_u306E_u30A8_u30A4_u30EA_u30A2_u30B9_u3092_u66F8_u304F" class="headerlink" title="STEP 1. コマンドのエイリアスを書く"></a>STEP 1. コマンドのエイリアスを書く</h2><p>基本はただのエイリアスです。</p>
-<h3 id="JavaScript__u3092_u30D3_u30EB_u30C9_u3059_u308B_u4F8B"><a href="#JavaScript__u3092_u30D3_u30EB_u30C9_u3059_u308B_u4F8B" class="headerlink" title="JavaScript をビルドする例"></a>JavaScript をビルドする例</h3><p>次の Makefile があるディレクトリで <code>make build</code> コマンドを実行すれば <a href="https://github.com/substack/browserify-website" target="_blank" rel="external">Browserify</a> でのビルドが実行される。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">build:</span></span><br><span class="line">	node_modules/.bin/browserify src/main.js -o dist/bundle.js</span><br></pre></td></tr></table></figure>
-<p>なお <code>build</code> というタスク名的な部分のことを <strong>ターゲット</strong> という。</p>
-<p>ミニファイしたければ <a href="https://github.com/mishoo/UglifyJS2" target="_blank" rel="external">Uglify</a> にパイプ、もしくは <a href="https://github.com/hughsk/uglifyify" target="_blank" rel="external">uglifyify</a> トランスフォームすればいい。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">build:</span></span><br><span class="line">	node_modules/.bin/browserify src/main.js | \</span><br><span class="line">	node_modules/.bin/uglifyjs -o dist/bundle.js</span><br></pre></td></tr></table></figure>
-<p>ターゲットの部分には生成したいファイル名、例えば dist/bundle.js などを指定できる。そうした場合の Makefile は以下のように、コマンドは <code>make dist/bundle.js</code> となり、自然言語的に理解しやすくなる。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dist/bundle.js:</span><br><span class="line">	@node_modules/.bin/browserify src/main.js | \</span><br><span class="line">	node_modules/.bin/uglifyjs -o dist/bundle.js</span><br></pre></td></tr></table></figure>
-<p>なおコマンド部のはじめに <code>@</code> をつけてみたが、これは実行するコマンドを標準出力しないための記号。コマンドを確認したければつけないままで OK。</p>
-<h3 id="JavaScript__u3092_u30A4_u30F3_u30AF_u30EA_u30E1_u30F3_u30BF_u30EB_u30D3_u30EB_u30C9_u3059_u308B_u4F8B"><a href="#JavaScript__u3092_u30A4_u30F3_u30AF_u30EA_u30E1_u30F3_u30BF_u30EB_u30D3_u30EB_u30C9_u3059_u308B_u4F8B" class="headerlink" title="JavaScript をインクリメンタルビルドする例"></a>JavaScript をインクリメンタルビルドする例</h3><p><a href="https://github.com/substack/watchify" target="_blank" rel="external">watchify</a> がそれ自身でインクリメンタルビルドする機能を持っているので、これを叩くだけ。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">watch-js:</span><br><span class="line">	@node_modules/.bin/watchify src/main.js -o src/bundle.js -v -d</span><br></pre></td></tr></table></figure>
-<h2 id="STEP_2-__u4F9D_u5B58_u30BF_u30FC_u30B2_u30C3_u30C8_u3092_u66F8_u304F"><a href="#STEP_2-__u4F9D_u5B58_u30BF_u30FC_u30B2_u30C3_u30C8_u3092_u66F8_u304F" class="headerlink" title="STEP 2. 依存ターゲットを書く"></a>STEP 2. 依存ターゲットを書く</h2><p>上の Makefile は本当にただのエイリアスに過ぎないので、次は <strong>依存ターゲット</strong> を導入する。</p>
-<p>dist/bundle.js を生成するまでに必要な依存関係をリスト化してみると、</p>
-<ul>
-<li><strong>dist/bundle.js は</strong><ul>
-<li><code>browserify</code> や <code>uglifyjs</code> コマンドが使用できなければ出力できない。つまり Browserify や Uglify などの Node モジュールが格納されている <em>node_modules ディレクトリの存在に依存</em> している。</li>
-<li>dist/bundle.js は、 dist ディレクトリがないと出力できない。つまり <em>dist ディレクトリの存在に依存</em> している。</li>
-</ul>
-</li>
-<li><strong>node_modules は</strong><ul>
-<li>package.json ファイルを元に <code>npm install</code> コマンドによって作られる。つまり <em>package.json ファイルの存在</em> に依存している。</li>
-</ul>
-</li>
-</ul>
-<p>これらの依存関係の解決方法を Makefile で表現すると次のようになる。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">dist/bundle.js: node_modules dist</span><br><span class="line">	@node_modules/.bin/browserify src/main.js | \</span><br><span class="line">	node_modules/.bin/uglifyjs -o dist/bundle.js</span><br><span class="line"></span><br><span class="line"><span class="title">dist:</span></span><br><span class="line">	@mkdir -p dist</span><br><span class="line"></span><br><span class="line">node_modules: package.json</span><br><span class="line">	@npm install</span><br></pre></td></tr></table></figure>
-<p>このとき <code>make dist/bundle.js</code> を実行すると、必要な依存を自動的に解決してくれる。つまり、初めに node_modules の解決のため <code>npm install</code> が実行され、次に dist の解決のため <code>mkdir -p dist</code> が実行される。最後に dist/bundle.js が生成される。つまり <code>make dist/bundle.js</code> コマンド一つを実行すれば、他のコマンドを覚えたり実行せずにビルドできる。</p>
-<p>しかもターゲットと依存ターゲットのファイルのタイムスタンプを比較し、更新が必要なければコマンドはスキップされる。例えば package.json よりも node_modules が新しければ、node_modules の更新は不要なので <code>npm install</code> は実行されない。</p>
-<h2 id="STEP_3-__u4ED6_u306E_u7D99_u7D9A_u30D7_u30ED_u30BB_u30B9_u3092_u4E26_u5217_u5B9F_u884C_u3059_u308B"><a href="#STEP_3-__u4ED6_u306E_u7D99_u7D9A_u30D7_u30ED_u30BB_u30B9_u3092_u4E26_u5217_u5B9F_u884C_u3059_u308B" class="headerlink" title="STEP 3. 他の継続プロセスを並列実行する"></a>STEP 3. 他の継続プロセスを並列実行する</h2><p>ウェブサーバ越しに動作・表示確認するために <a href="https://github.com/indexzero/http-server" target="_blank" rel="external">http-server</a> を起動したいとする。さらに RESTful API モックサーバ <a href="https://github.com/typicode/json-server" target="_blank" rel="external">json-server</a> を起動したいとする。とりあえずそれぞれのプロセスの起動のためのターゲットを定義すると以下のようになる。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">run-dev-server: node_modules</span><br><span class="line">	@node_modules/.bin/http-server</span><br><span class="line"></span><br><span class="line">run-api-mock-server: node_modules</span><br><span class="line">	@node_modules/.bin/json-server --watch db.json</span><br><span class="line"></span><br><span class="line">watch-js:</span><br><span class="line">	@node_modules/.bin/watchify src/main.js -o src/bundle.js -v -d</span><br></pre></td></tr></table></figure>
-<p>これらのプロセスは並列に実行したいもの。そんな時は Make の <code>j</code> オプションでパラレル実行できるので、<code>make -j run-dev-server run-api-mock-server watch-js</code> のようなコマンドを実行するといい。とはいえこのコマンドを毎回叩くのは面倒なので、これを更に Makefile に定義しておく。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">watch:</span></span><br><span class="line">	@make -j run-dev-server run-api-mock-server watch-js</span><br></pre></td></tr></table></figure>
-<p>こうすれば、<code>make watch</code> すれば、3つのプロセスがパラレル実行される。仮にエラーでどれかのタスクが停止しても、Make のプロセスを止めればすべてのプロセスが止まるので、バックグラウンドでプロセスが残り続ける心配もない。npm run-script などで <code>&amp;</code> 区切りで実行すると、バックグラウンドプロセスが残りやすいので、これは便利。</p>
-<h2 id="STEP_4-__u5909_u6570_u3068_u304B_u30DE_u30AF_u30ED_u3068_u304B_u95A2_u6570_u3068_u304B_u4F7F_u3046"><a href="#STEP_4-__u5909_u6570_u3068_u304B_u30DE_u30AF_u30ED_u3068_u304B_u95A2_u6570_u3068_u304B_u4F7F_u3046" class="headerlink" title="STEP 4. 変数とかマクロとか関数とか使う"></a>STEP 4. 変数とかマクロとか関数とか使う</h2><p>ここまでの内容で十分に便利に使えるが、Makefile らしさを出すために以降では簡単なマクロを使う例を紹介する。ただししんどくなってきたら本末転倒なのでやめよう。</p>
-<p>はじめのほうに書いた次の Makefile は、</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dist/bundle.js:</span><br><span class="line">	@node_modules/.bin/browserify src/main.js | \</span><br><span class="line">	node_modules/.bin/uglifyjs -o dist/bundle.js</span><br></pre></td></tr></table></figure>
-<p>次の様に書き換えることができる。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">SRC</span>       = src</span><br><span class="line"><span class="constant">DIST</span>      = dist</span><br><span class="line"><span class="constant">MAIN_JS</span>   = <span class="variable">$(SRC)</span>/main.js</span><br><span class="line"><span class="constant">BUNDLE_JS</span> = <span class="variable">$(DIST)</span>/bundle.js</span><br><span class="line"></span><br><span class="line">$(BUNDLE_JS):</span><br><span class="line">	@node_modules/.bin/browserify <span class="variable">$(MAIN_JS)</span> | \</span><br><span class="line">	node_modules/.bin/uglifyjs -o $@</span><br></pre></td></tr></table></figure>
-<p>変数定義 <code>VAR=foo</code> と参照 <code>$(VAR)</code>、更にターゲット名を表すマクロ <code>$@</code> を導入した。</p>
-<h2 id="28_u756A_u5916_29_STEP_5-_Windows__u5BFE_u5FDC"><a href="#28_u756A_u5916_29_STEP_5-_Windows__u5BFE_u5FDC" class="headerlink" title="(番外) STEP 5. Windows 対応"></a>(番外) STEP 5. Windows 対応</h2><p>Windows よくわからないけど、MinGW とか使ってほしい。コマンドプロンプトでは諦めてほしい。こんな感じで <code>/</code> を <code>\</code> に置換する関数を使うといけたりもする。<strong>諦めてほしい</strong>。</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ifdef SystemRoot</span><br><span class="line">	fixPath = <span class="variable">$(subst /,\,$1)</span></span><br><span class="line">else</span><br><span class="line">	fixPath = $1</span><br><span class="line">endif</span><br><span class="line"></span><br><span class="line">$(call fixPath,dist/bundle.js):</span><br><span class="line">	@<span class="variable">$(call fixPath,node_modules/.bin/browserify src/main.js -o dist/bundle.js)</span></span><br></pre></td></tr></table></figure>
-<h2 id="Grunt_2C_gulp_2C_npm_run-script__u3068_u306E_u6BD4_u8F03"><a href="#Grunt_2C_gulp_2C_npm_run-script__u3068_u306E_u6BD4_u8F03" class="headerlink" title="Grunt, gulp, npm run-script との比較"></a>Grunt, gulp, npm run-script との比較</h2><ul>
-<li>Grunt 遅い、タスク定義が面倒。</li>
-<li>gulp 早いけどタスク定義が面倒。</li>
-<li>Grunt も gulp も、プラグイン化が必要。バージョンアップ追従のタイムラグや、中にはメンテナンスされなくなるものもあるので、プラグイン化されたものではなく生で使えるに越したことはない。</li>
-<li>npm run-script は表現力が足りない。簡単なタスクならいいが、マルチラインやコメントが書けないので複雑なタスクは無理。</li>
-<li>シェルスクリプトもいいけど、一貫したプラクティスを提供する Make のほうが乗っかりやすい。</li>
-</ul>
-<h2 id="u30B5_u30F3_u30D7_u30EB"><a href="#u30B5_u30F3_u30D7_u30EB" class="headerlink" title="サンプル"></a>サンプル</h2><p><a href="https://github.com/keik/frontend-with-make" target="_blank" rel="external">https://github.com/keik/frontend-with-make</a></p>
-<p><code>git clone https://github.com/keik/frontend-with-make.git</code> して <code>make</code> すれば依存パッケージのインストールやら何やらができるはず。Makefile 活用例のサンプルなので、アプリ部分のショボさは無視してください。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2016/02/16/frontend/" data-id="cil5aypz400108xgzl3eqrjje" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/make/">make</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/task-runner/">task-runner</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-slickgrid-colgroup-plugin" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/12/17/slickgrid-colgroup-plugin/" class="article-date">
-  <time datetime="2015-12-17T13:11:00.000Z" itemprop="datePublished">2015-12-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/17/slickgrid-colgroup-plugin/">slickgrid-colgroup-plugin 作った</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://github.com/mleibman/SlickGrid" target="_blank" rel="external">SlickGrid</a> のヘッダをグループ化するプラグイン <a href="https://github.com/keik/slickgrid-colgroup-plugin" target="_blank" rel="external">slickgrid-colgroup-plugin</a> を作ったので、ギョームシステムの開発とかにどうぞ。MIT。</p>
-<p><a href="http://keik.github.io/slickgrid-colgroup-plugin/examples/" target="_blank" rel="external">デモページ</a> にいくつかのサンプルを置いてます。</p>
-<p>SlickGrid 自体についても簡単に紹介すると、大量のデータをグリッドで表示できることを特徴としたフレームワークで、その仕組としてはスクロールされるたびに表示領域の DOM 要素だけを動的に作り直すことによって大量データを少ない DOM 要素数で表現している。</p>
-<p>プラグイン v1.0.4 における使い方は、SlickGrid オブジェクトにプラグインを登録して</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grid.registerPlugin(<span class="keyword">new</span> Slick.Plugins.ColGroup());</span><br></pre></td></tr></table></figure>
-<p>カラム定義で <code>children</code> プロパティを用いてグループ構造を持ったカラム定義を与えるだけ。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> columns = [</span><br><span class="line">  &#123;id: <span class="string">'col1'</span>, name: <span class="string">'col 1'</span>, children: [</span><br><span class="line">    &#123;id: <span class="string">'col1-1'</span>, name: <span class="string">'col 1-1'</span>, field: <span class="string">'col1-1'</span>&#125;,</span><br><span class="line">    &#123;id: <span class="string">'col1-2'</span>, name: <span class="string">'col 1-2'</span>, field: <span class="string">'col1-2'</span>&#125;</span><br><span class="line">  ]&#125;,</span><br><span class="line">  &#123;id: <span class="string">'col2'</span>, name: <span class="string">'col 2'</span>, children: [</span><br><span class="line">    &#123;id: <span class="string">'col2-1'</span>, name: <span class="string">'col 2-1'</span>, field: <span class="string">'col2-1'</span>&#125;,</span><br><span class="line">    &#123;id: <span class="string">'col2-2'</span>, name: <span class="string">'col 2-2'</span>, children: [</span><br><span class="line">      &#123;id: <span class="string">'col2-2-1'</span>, name: <span class="string">'col 2-2-1'</span>, field: <span class="string">'col2-2-1'</span>&#125;,</span><br><span class="line">      &#123;id: <span class="string">'col2-2-2'</span>, name: <span class="string">'col 2-2-2'</span>, field: <span class="string">'col2-2-2'</span>&#125;</span><br><span class="line">    ]&#125;</span><br><span class="line">  ]&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.keik.info/2015/12/17/slickgrid-colgroup-plugin/" data-id="cil5aypx800008xgzvwlmiws9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/slickgrid/">slickgrid</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
